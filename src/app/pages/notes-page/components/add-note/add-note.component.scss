@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 500px;
 }
 
 form {
@@ -31,4 +32,24 @@ form {
   color: darkslategray;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .dialog-container {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dialog-container {
+    width: 200px;
+  }
+}
+
+
+//galaxy fold :(
+@media screen and (max-width: 300px) {
+  .dialog-container {
+    width: 150px;
+  }
 }

@@ -10,7 +10,7 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Content</mat-label>
-      <input matInput formControlName="content">
+      <textarea matInput formControlName="content"></textarea>
       <mat-error *ngIf="addNoteForm.controls.content.hasError('required')">
         This field is required!
       </mat-error>
