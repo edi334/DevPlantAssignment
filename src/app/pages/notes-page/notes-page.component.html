@@ -8,8 +8,8 @@
   <div class="notes-container" [hidden]="notes.length === 0">
     <div class="note-container" *ngFor="let note of notes">
       <div class="note">
-        <p class="big-text">{{note.title}}</p>
-        <p class="big-text">{{note.content}}</p>
+        <p style="font-weight: bold" class="big-text">{{note.title}}</p>
+        <pre class="big-text">{{note.content}}</pre>
         <p class="medium-text">{{note.date | date: 'medium'}}</p>
       </div>
       <mat-icon style="cursor: pointer" (click)="deleteNote(note)">delete</mat-icon>
