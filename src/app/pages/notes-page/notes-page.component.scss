@@ -1,0 +1,70 @@
+.page-container {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 50px 0;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0;
+  line-height: 30px;
+}
+
+.buttons-header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notes {
+  font-weight: bold;
+}
+
+.notes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-bottom: 65px;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.note-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+@media screen and (max-width: 450px) {
+  .page-container {
+    padding: 50px 25px 0;
+  }
+  .title {
+    margin-bottom: 15px;
+  }
+  .buttons-header {
+    margin-top: 30px;
+  }
+  .notes-container {
+    padding-bottom: 40px;
+  }
+  .note-container {
+    margin-top: 20px;
+  }
+}

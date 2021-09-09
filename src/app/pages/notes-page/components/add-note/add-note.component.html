@@ -1,0 +1,23 @@
+<div class="dialog-container">
+  <p class="big-text header-text">Add a new note: </p>
+  <form [formGroup]="addNoteForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="addNoteForm.controls.title.hasError('required')">
+        This field is required!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <input matInput formControlName="content">
+      <mat-error *ngIf="addNoteForm.controls.content.hasError('required')">
+        This field is required!
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <div class="buttons-container">
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-raised-button (click)="submit()" [disabled]="!addNoteForm.valid">Add</button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="page-container">
+  <p class="heading title">Browser Notes</p>
+  <p class="large-text">This is an application for storing notes in the local storage of the browser!</p>
+  <div class="buttons-header">
+    <p class="big-text notes">{{notes.length === 0 ? 'NO NOTES YET' : 'NOTES: ' + notes.length}}</p>
+    <button (click)="addNote()" mat-raised-button class="big-text">Add note</button>
+  </div>
+  <div class="notes-container" [hidden]="notes.length === 0">
+    <div class="note-container" *ngFor="let note of notes">
+      <div class="note">
+        <p class="big-text">{{note.title}}</p>
+        <p class="big-text">{{note.content}}</p>
+        <p class="medium-text">{{note.date | date: 'medium'}}</p>
+      </div>
+      <mat-icon style="cursor: pointer" (click)="deleteNote(note)">delete</mat-icon>
+    </div>
+  </div>
+</div>
