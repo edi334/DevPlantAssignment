@@ -28,7 +28,7 @@ jobs:
         with:
           secrets: GIT_AUTH_TOKEN=${{ secrets.CR_PAT }}
           push: true
-          tags: ghcr.io/edi334/DevPlantAssignment:latest
+          tags: ghcr.io/edi334/devplantassignment:latest
 
   deploy:
     needs: build
