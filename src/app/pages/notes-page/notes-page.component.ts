@@ -3,6 +3,7 @@ import {INote} from "../../models/note";
 import {NotesService} from "../../services/notes.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AddNoteComponent} from "./components/add-note/add-note.component";
+import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-notes-page',
@@ -29,7 +30,7 @@ export class NotesPageComponent implements OnInit {
 
   addNote(): void {
     const dialogRef = this._dialog.open(AddNoteComponent);
-    dialogRef.afterClosed().subscribe(note => {
+    dialogRef.afterClosed().pipe(filter(note => note)).subscribe(note => {
       this._notesService.addNote(note);
       this.notes = this._notesService.getAllNotes();
     });
