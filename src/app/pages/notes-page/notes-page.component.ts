@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {INote} from "../../models/note";
 import {NotesService} from "../../services/notes.service";
 import {MatDialog} from "@angular/material/dialog";
@@ -15,7 +15,8 @@ export class NotesPageComponent implements OnInit {
   constructor(
     private readonly _notesService: NotesService,
     private readonly _dialog: MatDialog
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.notes = this._notesService.getAllNotes();
@@ -28,7 +29,7 @@ export class NotesPageComponent implements OnInit {
 
   addNote(): void {
     const dialogRef = this._dialog.open(AddNoteComponent);
-    dialogRef.componentInstance.saved.subscribe(note => {
+    dialogRef.afterClosed().subscribe(note => {
       this._notesService.addNote(note);
       this.notes = this._notesService.getAllNotes();
     });

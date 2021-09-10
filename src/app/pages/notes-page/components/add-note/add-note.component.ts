@@ -14,9 +14,6 @@ export class AddNoteComponent {
     content: ['', [Validators.required]]
   });
 
-  saved = new EventEmitter<INote>();
-  note!: INote;
-
   constructor(
     private readonly _formBuilder: FormBuilder,
     private readonly _dialogRef: MatDialogRef<AddNoteComponent>,
@@ -27,10 +24,11 @@ export class AddNoteComponent {
   }
 
   submit(): void {
-    this.note.date = new Date();
-    this.note.content = this.addNoteForm.controls.content.value;
-    this.note.title = this.addNoteForm.controls.title.value;
-    this.saved.emit(this.note);
-    this._dialogRef.close();
+    const note: INote = {
+      title: this.addNoteForm.controls.title.value,
+      content: this.addNoteForm.controls.content.value,
+      date: new Date()
+    }
+    this._dialogRef.close(note);
   }
 }
