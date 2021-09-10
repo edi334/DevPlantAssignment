@@ -13,24 +13,24 @@ export class NotesPageComponent implements OnInit {
   notes: INote[] = [];
 
   constructor(
-    private readonly notesService: NotesService,
-    private readonly dialog: MatDialog
+    private readonly _notesService: NotesService,
+    private readonly _dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
-    this.notes = this.notesService.getAllNotes();
+    this.notes = this._notesService.getAllNotes();
   }
 
   deleteNote(note: INote): void {
-    this.notesService.removeNote(note);
-    this.notes = this.notesService.getAllNotes();
+    this._notesService.removeNote(note);
+    this.notes = this._notesService.getAllNotes();
   }
 
   addNote(): void {
-    const dialogRef = this.dialog.open(AddNoteComponent);
+    const dialogRef = this._dialog.open(AddNoteComponent);
     dialogRef.componentInstance.saved.subscribe(note => {
-      this.notesService.addNote(note);
-      this.notes = this.notesService.getAllNotes();
-    })
+      this._notesService.addNote(note);
+      this.notes = this._notesService.getAllNotes();
+    });
   }
 }

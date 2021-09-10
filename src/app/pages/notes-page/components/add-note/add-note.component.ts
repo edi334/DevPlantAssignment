@@ -15,11 +15,7 @@ export class AddNoteComponent {
   });
 
   saved = new EventEmitter<INote>();
-  note: INote = {
-    date: new Date(),
-    content: '',
-    title: ''
-  };
+  note!: INote;
 
   constructor(
     private readonly _formBuilder: FormBuilder,
